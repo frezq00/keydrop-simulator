@@ -1,6 +1,7 @@
 <script lang="ts">
   import CaseSection from '$components/case/CaseSection.svelte';
-  import { TimeInMs, type CaseSection as CaseSectionType } from '$lib';
+  import { TimeInMs } from '$lib';
+  import type { CaseSection as CaseSectionType } from '$lib/types';
   export let data: { sections: CaseSectionType[] };
 
   let time = '';

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { supabase, type Item } from '@/lib/supabase'
+import { supabase } from '@/lib/supabase'
 import { useAuthStore } from '@/store/authStore'
 
 export default function Inventory() {

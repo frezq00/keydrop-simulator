@@ -1,8 +1,4 @@
-import { useState } from 'react'
-
 export default function Upgrader() {
-  const [selectedItems, setSelectedItems] = useState<any[]>([])
-  const [targetItem, setTargetItem] = useState<any>(null)
 
   return (
     <div className="container mx-auto px-4 py-8">

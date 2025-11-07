@@ -28,6 +28,7 @@ export interface Case {
 
 export interface CaseDrop {
   id: string
+  global_inv_id: string
   weapon_name: string
   skin_name: string
   skin_quality: string
@@ -36,6 +37,10 @@ export interface CaseDrop {
   skin_img_source: string
   stattrack: boolean
   parent_case: string
+  display_odds?: string
+  odds_range?: [number, number]
+  price_range?: string
+  display_chance?: string
 }
 
 export interface Item {

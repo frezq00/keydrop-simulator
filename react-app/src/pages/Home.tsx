@@ -11,14 +11,21 @@ export default function Home() {
   }, [])
 
   const loadCases = async () => {
-    const { data } = await supabase
+    const { data, error } = await supabase
       .from('cases')
       .select('*')
       .eq('expired', false)
       .order('position_in_grid', { ascending: true })
 
+    console.log('Cases data:', data)
+    console.log('Cases error:', error)
+
     if (data) {
-      setCases(data)
+      const casesWithNumericPrice = data.map(c => ({
+        ...c,
+        price: typeof c.price === 'string' ? parseFloat(c.price) : c.price
+      }))
+      setCases(casesWithNumericPrice)
     }
     setLoading(false)
   }

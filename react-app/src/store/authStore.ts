@@ -21,7 +21,7 @@ export const useAuthStore = create<AuthState>((set, get) => ({
   setUser: (user) => set({ user }),
   setSession: (session) => set({ session }),
 
-  login: async (username, password) => {
+  login: async (username, _password) => {
     try {
       const { data: user, error } = await supabase
         .from('users')
