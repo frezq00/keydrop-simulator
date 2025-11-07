@@ -58,6 +58,7 @@
   "type": "module",
   "packageManager": "yarn@3.2.4",
   "dependencies": {
+    "@prisma/client": "5.22.0",
     "@supabase/supabase-js": "^2.39.0",
     "@types/pg": "^8.10.2",
     "bcrypt": "^5.1.0",
