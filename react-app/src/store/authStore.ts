@@ -18,10 +18,10 @@ export const useAuthStore = create<AuthState>((set, get) => ({
   session: null,
   loading: true,
 
-  setUser: (user) => set({ user }),
-  setSession: (session) => set({ session }),
+  setUser: (user: User | null) => set({ user }),
+  setSession: (session: string | null) => set({ session }),
 
-  login: async (username, _password) => {
+  login: async (username: string, _password: string) => {
     try {
       const { data: user, error } = await supabase
         .from('users')
@@ -50,7 +50,7 @@ export const useAuthStore = create<AuthState>((set, get) => ({
     }
   },
 
-  register: async (username, password, sandboxMode) => {
+  register: async (username: string, password: string, sandboxMode: boolean) => {
     try {
       const { data: existing } = await supabase
         .from('users')
